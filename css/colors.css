@@ -1,0 +1,22 @@
+:root {
+    /* Main Colors */
+    --primary-bg: #010030;
+    --primary-light: #FF5F51;
+    --accent-dark: #0F1546;
+    --accent-light: #9A53D0;
+    --contrast-dark: #FF5F51;
+    --contrast-light: #7226FF;
+    
+    /* Gradients */
+    --main-gradient: linear-gradient(135deg, #010030 0%, #FF5F51 100%);
+    --accent-gradient: linear-gradient(135deg, #0F1546 0%, #9A53D0 100%);
+    --glow-gradient: linear-gradient(135deg, #7226FF 0%, #FF5F51 100%);
+    
+    /* Functional Colors */
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --border-color: #7226FF;
+    --shadow-color: rgba(114, 38, 255, 0.5);
+    --glitch-color-1: #FF5F51;
+    --glitch-color-2: #7226FF;
+}
