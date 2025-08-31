@@ -1,0 +1,10 @@
+4:    function fetchWithCredentials(url, options = {}) {
+47:        fetchWithCredentials('api/check_session.php')
+188:            fetchWithCredentials('api/login.php', {
+252:            fetchWithCredentials('api/register.php', {
+535:            fetchWithCredentials('api/resources.php', {
+577:        fetchWithCredentials('api/categories.php')
+772:            fetchWithCredentials('api/categories.php', {
+813:            fetchWithCredentials('api/resources.php', {
+855:        fetchWithCredentials('api/categories.php')
+923:        fetchWithCredentials('api/resources.php?status=approved')

@@ -1,0 +1,254 @@
+/* Multi-layer scrolling blocks */
+.multi-layer-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 2rem 0;
+    z-index: 2;
+}
+
+.layer-section {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.layer-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-light);
+    text-shadow: 0 0 10px var(--primary-light);
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.layer-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 80%;
+    background-color: var(--primary-light);
+    box-shadow: 0 0 10px var(--primary-light);
+}
+
+/* Sublayers for frontend/backend */
+.sublayers-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sublayer {
+    position: relative;
+}
+
+.sublayer-title {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--contrast-light);
+    margin-bottom: 0.5rem;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.sublayer-title::before {
+    content: '>';
+    position: absolute;
+    left: 1rem;
+    color: var(--primary-light);
+}
+
+/* Scrolling blocks container */
+.scrolling-blocks-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 150px;
+    margin-bottom: 1rem;
+}
+
+.scrolling-blocks-container::before,
+.scrolling-blocks-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 70px;
+    height: 100%;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.scrolling-blocks-container::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(1, 0, 48, 1), transparent);
+}
+
+.scrolling-blocks-container::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(1, 0, 48, 1), transparent);
+}
+
+/* Scrolling blocks */
+.scrolling-blocks {
+    display: flex;
+    animation: scrollBlocks 30s linear infinite;
+    will-change: transform;
+}
+
+/* Chain effect - duplicate blocks to create seamless loop */
+.scrolling-blocks .code-block-group {
+    display: flex;
+    flex-shrink: 0; /* Prevent blocks from shrinking */
+}
+
+.scrolling-blocks[data-direction="right"] {
+    animation-direction: reverse;
+}
+
+.scrolling-blocks[data-speed="25"] {
+    animation-duration: 25s;
+}
+
+.scrolling-blocks[data-speed="27"] {
+    animation-duration: 27s;
+}
+
+.scrolling-blocks[data-speed="28"] {
+    animation-duration: 28s;
+}
+
+.scrolling-blocks[data-speed="30"] {
+    animation-duration: 30s;
+}
+
+.scrolling-blocks[data-speed="32"] {
+    animation-duration: 32s;
+}
+
+.scrolling-blocks[data-speed="35"] {
+    animation-duration: 35s;
+}
+
+/* Add glitch to the animation */
+@keyframes scrollBlocks {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Only move by the width of one group */
+    }
+}
+
+/* Dynamic block sizing */
+.code-block {
+    position: relative;
+    margin: 0 0.5rem;
+    width: 180px;
+    height: 120px;
+    flex-shrink: 0;
+}
+
+.code-block.small {
+    width: 140px;
+    height: 100px;
+}
+
+.code-block.large {
+    width: 220px;
+    height: 140px;
+}
+
+/* Responsive block sizing */
+@media (max-width: 768px) {
+    .code-block {
+        width: 140px;
+        height: 100px;
+    }
+    
+    .code-block.small {
+        width: 110px;
+        height: 80px;
+    }
+    
+    .code-block.large {
+        width: 180px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .code-block {
+        width: 110px;
+        height: 80px;
+    }
+    
+    .code-block.small {
+        width: 90px;
+        height: 70px;
+    }
+    
+    .code-block.large {
+        width: 150px;
+        height: 100px;
+    }
+}
+
+/* Block connector */
+.block-connector {
+    width: 15px;
+    height: 2px;
+    background-color: var(--contrast-light);
+    align-self: center;
+    position: relative;
+    box-shadow: 0 0 5px var(--contrast-light);
+    margin: 0 -5px;
+}
+
+.block-connector::before,
+.block-connector::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--primary-light);
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 5px var(--primary-light);
+}
+
+.block-connector::before {
+    left: -2px;
+}
+
+.block-connector::after {
+    right: -2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .layer-title {
+        font-size: 1.5rem;
+    }
+    
+    .sublayer-title {
+        font-size: 1rem;
+    }
+    
+    .code-block.small {
+        width: 120px;
+        height: 90px;
+    }
+    
+    .code-block.large {
+        width: 180px;
+        height: 120px;
+    }
+}

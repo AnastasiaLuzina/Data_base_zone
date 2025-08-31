@@ -1,0 +1,20 @@
+total 184
+drwxr-xr-x 3 root root  4096 Aug 31 03:28 .
+drwxr-xr-x 1 root root   162 Aug 31 03:28 ..
+-rw-r--r-- 1 root root  6416 Aug 31 03:28 circuit-board.js
+-rw-r--r-- 1 root root  2355 Aug 31 03:28 circuit-pattern.js
+-rw-r--r-- 1 root root   678 Aug 31 03:28 colors.css
+-rw-r--r-- 1 root root  7751 Aug 31 03:28 glitch.css
+-rw-r--r-- 1 root root 24523 Aug 31 03:28 index.html
+-rw-r--r-- 1 root root  1427 Aug 31 03:28 lag-effects.css
+-rw-r--r-- 1 root root  5933 Aug 31 03:28 lag-effects.js
+-rw-r--r-- 1 root root  4696 Aug 31 03:28 multi-layer-blocks.css
+-rw-r--r-- 1 root root  5964 Aug 31 03:28 multi-layer-blocks.js
+drwxr-xr-x 2 root root    58 Aug 31 03:28 outputs
+-rw-r--r-- 1 root root  3743 Aug 31 03:28 personal-cabinet.css
+-rw-r--r-- 1 root root  7549 Aug 31 03:28 personal-cabinet.js
+-rw-r--r-- 1 root root  5099 Aug 31 03:28 resource-selection.css
+-rw-r--r-- 1 root root 15640 Aug 31 03:28 resource-selection.js
+-rw-r--r-- 1 root root 21310 Aug 31 03:28 script.js
+-rw-r--r-- 1 root root 27292 Aug 31 03:28 style.css
+-rw-r--r-- 1 root root 12589 Aug 31 03:28 tech-icons.js

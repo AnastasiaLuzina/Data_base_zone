@@ -1,0 +1,10 @@
+total 32
+drwxr-xr-x 2 root root  186 Aug 31 03:31 .
+drwxr-xr-x 7 root root 4096 Aug 31 03:45 ..
+-rw-r--r-- 1 root root 2017 Aug 31 03:31 categories.php
+-rw-r--r-- 1 root root  457 Aug 31 03:31 check_session.php
+-rw-r--r-- 1 root root  806 Aug 31 03:30 login.php
+-rw-r--r-- 1 root root  268 Aug 31 03:31 logout.php
+-rw-r--r-- 1 root root 1377 Aug 31 03:31 notifications.php
+-rw-r--r-- 1 root root  907 Aug 31 03:31 register.php
+-rw-r--r-- 1 root root 3332 Aug 31 03:31 resources.php

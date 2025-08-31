@@ -1,0 +1,8 @@
+7:    <link rel="stylesheet" href="css/style.css">
+8:    <link rel="stylesheet" href="css/glitch.css">
+9:    <link rel="stylesheet" href="css/lag-effects.css">
+10:    <link rel="stylesheet" href="css/multi-layer-blocks.css">
+11:    <link rel="stylesheet" href="css/resource-selection.css">
+12:    <link rel="stylesheet" href="css/personal-cabinet.css">
+13:    <link rel="preconnect" href="https://fonts.googleapis.com">
+14:    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

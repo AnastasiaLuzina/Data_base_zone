@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+        .success {
+            color: green;
+            margin-top: 10px;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <h1>Login Test</h1>
+    
+    <div id="loginForm">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" value="admin">
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" value="111">
+        </div>
+        <button id="loginBtn">Login</button>
+        <div id="loginMessage"></div>
+    </div>
+    
+    <div id="result">
+        <h2>Session Status</h2>
+        <div id="sessionStatus">Checking session...</div>
+        
+        <h2>User Info</h2>
+        <div id="userInfo">Not logged in</div>
+        
+        <button id="logoutBtn" style="display: none;">Logout</button>
+    </div>
+    
+    <script>
+        // Check session status on page load
+        checkSession();
+        
+        // Login button event listener
+        document.getElementById('loginBtn').addEventListener('click', function() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            console.log('Attempting login for user:', username);
+            
+            fetch('api/login.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                credentials: 'same-origin',
+                body: JSON.stringify({ username, password })
+            })
+            .then(response => {
+                console.log('Login response:', response);
+                return response.json();
+            })
+            .then(data => {
+                console.log('Login data:', data);
+                
+                if (data.status === 'success') {
+                    document.getElementById('loginMessage').className = 'success';
+                    document.getElementById('loginMessage').textContent = 'Login successful!';
+                    
+                    // Update session status
+                    checkSession();
+                } else {
+                    document.getElementById('loginMessage').className = 'error';
+                    document.getElementById('loginMessage').textContent = data.message || 'Login failed';
+                }
+            })
+            .catch(error => {
+                console.error('Error logging in:', error);
+                document.getElementById('loginMessage').className = 'error';
+                document.getElementById('loginMessage').textContent = 'Error: ' + error.message;
+            });
+        });
+        
+        // Logout button event listener
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+            fetch('api/logout.php', {
+                credentials: 'same-origin'
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Logout data:', data);
+                
+                if (data.status === 'success') {
+                    // Update session status
+                    checkSession();
+                }
+            })
+            .catch(error => {
+                console.error('Error logging out:', error);
+            });
+        });
+        
+        // Function to check session status
+        function checkSession() {
+            console.log('Checking session status...');
+            
+            fetch('api/check_session.php', {
+                credentials: 'same-origin'
+            })
+            .then(response => {
+                console.log('Session check response:', response);
+                return response.json();
+            })
+            .then(data => {
+                console.log('Session data:', data);
+                
+                if (data.status === 'success') {
+                    document.getElementById('sessionStatus').textContent = 
+                        'Session ID: ' + data.session_id;
+                    
+                    if (data.logged_in) {
+                        document.getElementById('userInfo').innerHTML = 
+                            '<p><strong>Username:</strong> ' + data.username + '</p>' +
+                            '<p><strong>Is Admin:</strong> ' + (data.is_admin ? 'Yes' : 'No') + '</p>';
+                        
+                        document.getElementById('logoutBtn').style.display = 'block';
+                    } else {
+                        document.getElementById('userInfo').textContent = 'Not logged in';
+                        document.getElementById('logoutBtn').style.display = 'none';
+                    }
+                } else {
+                    document.getElementById('sessionStatus').textContent = 'Error checking session';
+                    document.getElementById('userInfo').textContent = 'Error';
+                }
+            })
+            .catch(error => {
+                console.error('Error checking session:', error);
+                document.getElementById('sessionStatus').textContent = 'Error: ' + error.message;
+            });
+        }
+    </script>
+</body>
+</html>

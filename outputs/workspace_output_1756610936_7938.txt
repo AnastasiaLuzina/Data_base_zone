@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk Programming Hub</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/glitch.css">
+    <link rel="stylesheet" href="css/lag-effects.css">
+    <link rel="stylesheet" href="css/multi-layer-blocks.css">
+    <link rel="stylesheet" href="css/resource-selection.css">
+    <link rel="stylesheet" href="css/personal-cabinet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <div class="noise-overlay"></div>
+    <div class="scanline"></div>
+    <div class="circuit-background"></div>
+    
+    <!-- Header Section -->
+    <header>
+        <div class="logo glitch-text" data-text="CyberLearn">CyberLearn</div>
+        <nav>
+            <ul>
+                <li><a href="#" class="nav-link glitch-hover">Главная</a></li>
+                <li><a href="#" class="nav-link glitch-hover">Ресурсы</a></li>
+                <li><a href="#" class="nav-link glitch-hover">Сообщество</a></li>
+                <li><a href="#" class="nav-link glitch-hover">О нас</a></li>
+            </ul>
+        </nav>
+        <div class="login-btn">
+            <a href="#" class="cyber-btn">Войти</a>
+        </div>
+    </header>
+
+    <!-- Hero Section with Rotating Blocks -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="glitch-text" data-text="Ресурсы на любые интересующие вас темы!">Ресурсы на любые интересующие вас темы!</h1>
+            <p class="subtitle">Погрузитесь в мир программирования с нашей киберпанк-платформой</p>
+        </div>
+        
+        <div class="multi-layer-container">
+            <!-- Layer 1: Programming Languages -->
+            <div class="layer-section">
+                <div class="layer-title glitch-text" data-text="Языки программирования">Языки программирования</div>
+                <div class="scrolling-blocks-container">

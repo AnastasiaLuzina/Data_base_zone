@@ -1,0 +1,11 @@
+39:        fetch('api/check_session.php')
+171:            fetch('api/login.php', {
+229:            fetch('api/register.php', {
+512:            fetch('api/resources.php', {
+554:        fetch('api/categories.php')
+749:            fetch('api/categories.php', {
+790:            fetch('api/resources.php', {
+832:        fetch('api/categories.php')
+900:        fetch('api/resources.php?status=approved')
+947:        fetch('api/resources.php?status=pending')
+1050:        fetch('api/resources.php', {

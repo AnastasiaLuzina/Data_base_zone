@@ -1,0 +1,137 @@
+<?php
+// Start session
+session_start();
+
+// Include database configuration
+require_once 'config.php';
+
+/**
+ * Register a new user
+ * 
+ * @param string $username Username
+ * @param string $password Password
+ * @param string $email Email (optional)
+ * @return array Result with status and message
+ */
+function registerUser($username, $password, $email = null) {
+    global $pdo;
+    
+    try {
+        // Check if username already exists
+        $stmt = $pdo->prepare("SELECT id FROM users WHERE username = :username");
+        $stmt->bindParam(':username', $username);
+        $stmt->execute();
+        
+        if ($stmt->rowCount() > 0) {
+            return ['status' => 'error', 'message' => 'Username already exists'];
+        }
+        
+        // Hash password
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        
+        // Insert new user
+        $stmt = $pdo->prepare("INSERT INTO users (username, password, email) VALUES (:username, :password, :email)");
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':password', $hashed_password);
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+        
+        return ['status' => 'success', 'message' => 'User registered successfully'];
+    } catch(PDOException $e) {
+        return ['status' => 'error', 'message' => 'Registration failed: ' . $e->getMessage()];
+    }
+}
+
+/**
+ * Login a user
+ * 
+ * @param string $username Username
+ * @param string $password Password
+ * @return array Result with status and message
+ */
+function loginUser($username, $password) {
+    global $pdo;
+    
+    try {
+        // Get user by username
+        $stmt = $pdo->prepare("SELECT id, username, password, is_admin FROM users WHERE username = :username");
+        $stmt->bindParam(':username', $username);
+        $stmt->execute();
+        
+        if ($stmt->rowCount() == 0) {
+            return ['status' => 'error', 'message' => 'Invalid username or password'];
+        }
+        
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        // Verify password
+        if (password_verify($password, $user['password'])) {
+            // Set session variables
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['username'] = $user['username'];
+            $_SESSION['is_admin'] = $user['is_admin'];
+            
+            return [
+                'status' => 'success', 
+                'message' => 'Login successful',
+                'is_admin' => $user['is_admin']
+            ];
+        } else {
+            return ['status' => 'error', 'message' => 'Invalid username or password'];
+        }
+    } catch(PDOException $e) {
+        return ['status' => 'error', 'message' => 'Login failed: ' . $e->getMessage()];
+    }
+}
+
+/**
+ * Check if user is logged in
+ * 
+ * @return bool True if logged in, false otherwise
+ */
+function isLoggedIn() {
+    return isset($_SESSION['user_id']);
+}
+
+/**
+ * Check if user is admin
+ * 
+ * @return bool True if admin, false otherwise
+ */
+function isAdmin() {
+    return isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1;
+}
+
+/**
+ * Logout user
+ */
+function logoutUser() {
+    // Unset all session variables
+    $_SESSION = [];
+    
+    // Destroy the session
+    session_destroy();
+}
+
+/**
+ * Update user email
+ * 
+ * @param int $user_id User ID
+ * @param string $email New email
+ * @return array Result with status and message
+ */
+function updateUserEmail($user_id, $email) {
+    global $pdo;
+    
+    try {
+        $stmt = $pdo->prepare("UPDATE users SET email = :email WHERE id = :user_id");
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':user_id', $user_id);
+        $stmt->execute();
+        
+        return ['status' => 'success', 'message' => 'Email updated successfully'];
+    } catch(PDOException $e) {
+        return ['status' => 'error', 'message' => 'Email update failed: ' . $e->getMessage()];
+    }
+}
+?>

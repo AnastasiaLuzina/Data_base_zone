@@ -1,0 +1,54 @@
+# Enable rewrite engine
+RewriteEngine On
+
+# Set the base directory
+RewriteBase /
+
+# Allow direct access to files
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirect all API requests to the appropriate PHP files
+RewriteRule ^api/([^/]+)/?$ api/$1.php [L,QSA]
+
+# PHP settings
+<IfModule mod_php7.c>
+    # Set session timeout
+    php_value session.gc_maxlifetime 86400
+    php_value session.cookie_lifetime 86400
+    
+    # Set upload limits
+    php_value upload_max_filesize 10M
+    php_value post_max_size 10M
+    
+    # Error handling
+    php_flag display_errors Off
+    php_flag log_errors On
+    php_value error_log logs/php_errors.log
+</IfModule>
+
+# Security headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Prevent directory listing
+Options -Indexes
+
+# Prevent access to sensitive files
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Allow access to deploy.php
+<Files "deploy.php">
+    Order allow,deny
+    Allow from all
+</Files>
+
+# Default index files
+DirectoryIndex index.php index.html

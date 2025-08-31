@@ -1,0 +1,10 @@
+5:        return fetch(url, {
+47:        fetch('api/check_session.php', {
+190:            fetch('api/login.php', {
+255:            fetch('api/register.php', {
+539:            fetch('api/resources.php', {
+581:        fetch('api/categories.php')
+776:            fetch('api/categories.php', {
+817:            fetch('api/resources.php', {
+859:        fetch('api/categories.php')
+927:        fetch('api/resources.php?status=approved')

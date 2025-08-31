@@ -1,0 +1,20 @@
+<?php
+// Database configuration
+$host = 'localhost';
+$dbname = 'cyberlearn';
+$username = 'root';
+$password = '';
+
+try {
+    // Create PDO instance
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    
+    // Set PDO error mode to exception
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+    // Set character set
+    $pdo->exec("SET NAMES utf8mb4");
+} catch(PDOException $e) {
+    die("Database connection failed: " . $e->getMessage());
+}
+?>

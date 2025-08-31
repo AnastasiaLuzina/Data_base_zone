@@ -1,0 +1,22 @@
+<?php
+// Include auth functions
+require_once '../db/auth.php';
+
+// Set content type to JSON
+header('Content-Type: application/json');
+
+// Check if user is logged in
+if (isLoggedIn()) {
+    echo json_encode([
+        'status' => 'success',
+        'logged_in' => true,
+        'username' => $_SESSION['username'],
+        'is_admin' => isAdmin()
+    ]);
+} else {
+    echo json_encode([
+        'status' => 'success',
+        'logged_in' => false
+    ]);
+}
+?>

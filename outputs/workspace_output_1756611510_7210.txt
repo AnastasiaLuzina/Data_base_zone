@@ -1,0 +1,9 @@
+17:<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+423:    <script src="js/script.js"></script>
+424:    <script src="js/circuit-pattern.js"></script>
+425:    <script src="js/circuit-board.js"></script>
+426:    <script src="js/tech-icons.js"></script>
+427:    <script src="js/multi-layer-blocks.js"></script>
+428:    <script src="js/resource-selection.js"></script>
+429:    <script src="js/personal-cabinet.js"></script>
+430:    <script src="js/lag-effects.js"></script>
