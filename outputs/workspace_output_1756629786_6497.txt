@@ -1,0 +1,2 @@
+-rw-r--r-- 1 root root 6289 Aug 31 08:36 ./admin-panel.css
+-rw-r--r-- 1 root root 1916 Aug 31 08:37 ./check_admin.php

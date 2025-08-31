@@ -1,0 +1,3 @@
+1481:                    loadPendingResources();
+1694:    function loadPendingResources() {
+1809:                loadPendingResources();

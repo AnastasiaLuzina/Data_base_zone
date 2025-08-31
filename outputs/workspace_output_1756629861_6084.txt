@@ -1,0 +1,6 @@
+1404:                <div class="admin-tab-content" id="pending-tab" style="display: none;">
+1405-                    <h3>Ресурсы на проверку</h3>
+1406-                    
+1407-                    <div id="pending-resources-container" class="admin-list-container">
+1408-                        <!-- Pending resources will be loaded dynamically -->
+1409-                        <div class="loading">Загрузка ресурсов на проверку...</div>

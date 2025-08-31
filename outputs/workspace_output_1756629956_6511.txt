@@ -1,0 +1,16 @@
+3:<head>
+4-    <meta charset="UTF-8">
+5-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+6-    <title>Cyberpunk Programming Hub</title>
+7-    <link rel="stylesheet" href="css/style.css">
+8-    <link rel="stylesheet" href="css/glitch.css">
+9-    <link rel="stylesheet" href="css/lag-effects.css">
+10-    <link rel="stylesheet" href="css/multi-layer-blocks.css">
+11-    <link rel="stylesheet" href="css/resource-selection.css">
+12-    <link rel="stylesheet" href="css/personal-cabinet.css">
+13-    <link rel="stylesheet" href="css/admin-panel.css">
+14-    <link rel="stylesheet" href="css/sidebar.css">
+15-    <link rel="preconnect" href="https://fonts.googleapis.com">
+16-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+17-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+18-<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>

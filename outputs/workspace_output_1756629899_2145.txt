@@ -1,0 +1,15 @@
+1476-                    loadAdminCategories();
+1477-                } else if (this.getAttribute('data-tab') === 'resources') {
+1478-                    loadAdminCategories();
+1479-                    loadAdminResources();
+1480-                } else if (this.getAttribute('data-tab') === 'pending') {
+1481:                    loadPendingResources();
+1482-                }
+1483-            });
+1484-        });
+1485-        
+1486-        // Load initial data
+--
+1804-        })
+1805-        .then(response => response.json())
+1806-        .then(data => {

@@ -1,0 +1,80 @@
+/* Telegram Bot Styles */
+.telegram-bot-info {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid #00ff41;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+}
+
+.telegram-bot-info p {
+    margin-bottom: 15px;
+    color: #00ff41;
+}
+
+.telegram-bot-info code {
+    background-color: #111;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-family: 'Share Tech Mono', monospace;
+    color: #00ccff;
+    border: 1px solid #00ccff;
+}
+
+.telegram-setup-actions {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.telegram-instructions {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-left: 3px solid #00ccff;
+}
+
+.telegram-instructions h4 {
+    color: #00ccff;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.telegram-instructions ol {
+    padding-left: 20px;
+}
+
+.telegram-instructions li {
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+/* Telegram Button in Personal Cabinet */
+.telegram-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #0088cc, #0099cc);
+    color: white;
+    border: 2px solid #0088cc;
+    box-shadow: 0 0 10px rgba(0, 136, 204, 0.7);
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+.telegram-btn:hover {
+    background: linear-gradient(45deg, #0099cc, #00aadd);
+    box-shadow: 0 0 15px rgba(0, 136, 204, 0.9);
+    transform: translateY(-2px);
+}
+
+.telegram-icon {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.telegram-icon svg {
+    width: 24px;
+    height: 24px;
+}

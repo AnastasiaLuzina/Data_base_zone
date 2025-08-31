@@ -1,0 +1,11 @@
+                <div class="admin-tabs">
+                    <button class="admin-tab-btn active" data-tab="categories">Категории</button>
+                    <button class="admin-tab-btn" data-tab="resources">Ресурсы</button>
+                    <button class="admin-tab-btn" data-tab="pending">Ресурсы на проверку</button>
+                </div>
+                
+                <div class="admin-tab-content" id="categories-tab">
+                    <h3>Управление категориями</h3>
+                    
+                    <form id="add-category-form" class="admin-form">
+                        <div class="form-group">

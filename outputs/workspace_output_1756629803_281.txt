@@ -1,0 +1,71 @@
+./personal-cabinet.js:                    isAdminUser = data.is_admin;
+./personal-cabinet.js:                    console.log('User logged in:', currentUser, 'Is admin:', isAdminUser, 'Role:', userRole);
+./personal-cabinet.js:                    // If admin, add admin panel link
+./personal-cabinet.js:                        const adminLink = document.createElement('a');
+./personal-cabinet.js:                        adminLink.href = '#';
+./personal-cabinet.js:                        adminLink.className = 'cyber-btn admin-btn';
+./personal-cabinet.js:                        adminLink.textContent = 'Админ панель';
+./personal-cabinet.js:                        adminLink.addEventListener('click', function(e) {
+./personal-cabinet.js:                        loginBtn.parentNode.appendChild(adminLink);
+./personal-cabinet.js:                    isAdminUser = data.is_admin;
+./personal-cabinet.js:                    console.log('Login successful. User:', currentUser, 'Is admin:', isAdminUser, 'Role:', userRole);
+./personal-cabinet.js:                    // If admin, add admin panel link
+./personal-cabinet.js:                        const adminLink = document.createElement('a');
+./personal-cabinet.js:                        adminLink.href = '#';
+./personal-cabinet.js:                        adminLink.className = 'cyber-btn admin-btn';
+./personal-cabinet.js:                        adminLink.textContent = 'Админ панель';
+./personal-cabinet.js:                        adminLink.addEventListener('click', function(e) {
+./personal-cabinet.js:                        loginBtn.parentNode.appendChild(adminLink);
+./personal-cabinet.js:                    // Remove admin panel link if exists
+./personal-cabinet.js:                    const adminLink = document.querySelector('.admin-btn');
+./personal-cabinet.js:                    if (adminLink) {
+./personal-cabinet.js:                        adminLink.parentNode.removeChild(adminLink);
+./personal-cabinet.js:    // Function to open admin panel
+./personal-cabinet.js:        // Check if user is admin
+./personal-cabinet.js:        let modal = document.getElementById('adminPanelModal');
+./personal-cabinet.js:            modal.id = 'adminPanelModal';
+./personal-cabinet.js:            modal.className = 'modal admin-panel-modal';
+./personal-cabinet.js:            <div class="modal-content admin-panel-content">
+./personal-cabinet.js:                <span class="close-btn admin-close">&times;</span>
+./personal-cabinet.js:                <div class="admin-tabs">
+./personal-cabinet.js:                    <button class="admin-tab-btn active" data-tab="categories">Категории</button>
+./personal-cabinet.js:                    <button class="admin-tab-btn" data-tab="resources">Ресурсы</button>
+./personal-cabinet.js:                    <button class="admin-tab-btn" data-tab="pending">Ресурсы на проверку</button>
+./personal-cabinet.js:                <div class="admin-tab-content" id="categories-tab">
+./personal-cabinet.js:                    <form id="add-category-form" class="admin-form">
+./personal-cabinet.js:                        <div id="categories-container" class="admin-list-container">
+./personal-cabinet.js:                <div class="admin-tab-content" id="resources-tab" style="display: none;">
+./personal-cabinet.js:                    <form id="add-admin-resource-form" class="admin-form">
+./personal-cabinet.js:                            <label for="admin-resource-title">Название ресурса:</label>
+./personal-cabinet.js:                            <input type="text" id="admin-resource-title" name="title" class="cyber-input" required>
+./personal-cabinet.js:                            <label for="admin-resource-link">Ссылка:</label>
+./personal-cabinet.js:                            <input type="url" id="admin-resource-link" name="link" class="cyber-input" required>
+./personal-cabinet.js:                            <label for="admin-resource-category">Категория:</label>
+./personal-cabinet.js:                            <select id="admin-resource-category" name="category_id" class="cyber-input" required>
+./personal-cabinet.js:                            <label for="admin-resource-type">Тип ресурса:</label>
+./personal-cabinet.js:                            <select id="admin-resource-type" name="resource_type" class="cyber-input" required>
+./personal-cabinet.js:                            <label for="admin-resource-difficulty">Уровень сложности:</label>
+./personal-cabinet.js:                            <select id="admin-resource-difficulty" name="difficulty_level" class="cyber-input" required>
+./personal-cabinet.js:                        <div id="resources-container" class="admin-list-container">
+./personal-cabinet.js:                <div class="admin-tab-content" id="pending-tab" style="display: none;">
+./personal-cabinet.js:                    <div id="pending-resources-container" class="admin-list-container">
+./personal-cabinet.js:        const closeBtn = modal.querySelector('.admin-close');
+./personal-cabinet.js:        const tabBtns = modal.querySelectorAll('.admin-tab-btn');
+./personal-cabinet.js:                const tabContents = modal.querySelectorAll('.admin-tab-content');
+./personal-cabinet.js:        const addAdminResourceForm = document.getElementById('add-admin-resource-form');
+./personal-cabinet.js:            const title = document.getElementById('admin-resource-title').value;
+./personal-cabinet.js:            const link = document.getElementById('admin-resource-link').value;
+./personal-cabinet.js:            const category_id = document.getElementById('admin-resource-category').value;
+./personal-cabinet.js:            const resource_type = document.getElementById('admin-resource-type').value;
+./personal-cabinet.js:            const difficulty_level = document.getElementById('admin-resource-difficulty').value;
+./personal-cabinet.js:                    document.getElementById('admin-resource-title').value = '';
+./personal-cabinet.js:                    document.getElementById('admin-resource-link').value = '';
+./personal-cabinet.js:                    document.getElementById('admin-resource-category').value = '';
+./personal-cabinet.js:                    document.getElementById('admin-resource-type').value = '';
+./personal-cabinet.js:                    document.getElementById('admin-resource-difficulty').value = '';
+./personal-cabinet.js:    // Function to load categories for admin panel
+./personal-cabinet.js:                                    <div class="admin-list-item">
+./personal-cabinet.js:                        document.getElementById('admin-resource-category'),
+./personal-cabinet.js:    // Function to load resources for admin panel
+./personal-cabinet.js:                                    <div class="admin-list-item">
+./personal-cabinet.js:                                    <div class="admin-list-item">

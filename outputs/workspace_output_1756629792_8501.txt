@@ -1,0 +1,3 @@
+./deploy.php:echo "<li><strong>Manage Categories:</strong> In admin panel, use the 'Категории' tab</li>";
+./deploy.php:echo "<li><strong>Manage Resources:</strong> In admin panel, use the 'Ресурсы' tab</li>";
+./deploy.php:echo "<li><strong>Approve Resources:</strong> In admin panel, use the 'Ресурсы на проверку' tab</li>";

@@ -1,0 +1,294 @@
+/* Personal Cabinet Styles */
+.personal-cabinet-modal {
+    z-index: 1000;
+}
+
+.personal-cabinet-content {
+    width: 90%;
+    max-width: 1000px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 30px;
+}
+
+.user-info {
+    display: flex;
+    margin-bottom: 30px;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.user-avatar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--neon-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.user-avatar:before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--neon-blue), var(--neon-pink));
+    z-index: -1;
+    border-radius: 50%;
+    filter: blur(5px);
+}
+
+.avatar-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatar-placeholder {
+    font-size: 3em;
+    color: var(--neon-blue);
+}
+
+.username {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--neon-blue);
+    margin-top: 10px;
+}
+
+.user-stats {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stat-label {
+    min-width: 150px;
+    color: var(--neon-pink);
+}
+
+.stat-value {
+    color: var(--text-color);
+    flex: 1;
+}
+
+.profile-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.cabinet-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.section {
+    border: 1px solid var(--neon-blue);
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.section:before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--neon-blue), var(--neon-pink));
+    z-index: -1;
+    filter: blur(10px);
+    opacity: 0.5;
+}
+
+.section h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--neon-blue);
+}
+
+.goals-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.goal-btn {
+    flex: 1;
+    min-width: 200px;
+}
+
+.categories-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.category-btn {
+    flex: 1;
+    min-width: 150px;
+}
+
+.favorites-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.favorite-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.remove-fav-btn {
+    padding: 5px 10px;
+    font-size: 0.8em;
+}
+
+.add-resource-btn {
+    width: 100%;
+    margin-top: 10px;
+    background: linear-gradient(45deg, var(--neon-blue), var(--neon-pink));
+    border: none;
+    color: var(--dark-bg);
+    font-weight: bold;
+}
+
+/* Change avatar modal */
+.change-avatar-modal,
+.change-password-modal,
+.change-email-modal,
+.change-username-modal,
+.change-role-modal {
+    z-index: 1001;
+}
+
+.change-avatar-content,
+.change-password-content,
+.change-email-content,
+.change-username-content,
+.change-role-content {
+    width: 90%;
+    max-width: 500px;
+    padding: 30px;
+}
+
+.avatar-preview {
+    margin: 15px 0;
+    text-align: center;
+}
+
+/* Small button styles */
+.small-btn {
+    padding: 5px 10px;
+    font-size: 0.8em;
+}
+
+.edit-btn {
+    background: rgba(0, 255, 255, 0.2);
+    border: 1px solid var(--neon-blue);
+}
+
+.danger-btn {
+    background: rgba(255, 0, 0, 0.2);
+    border: 1px solid #ff3333;
+    color: #ff3333;
+}
+
+.danger-btn:hover {
+    background: rgba(255, 0, 0, 0.4);
+    box-shadow: 0 0 10px #ff3333;
+}
+
+/* Success message */
+.success-message {
+    color: #33ff33;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #33ff33;
+    background: rgba(0, 255, 0, 0.1);
+    margin: 20px 0;
+    animation: glow 2s infinite;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px #33ff33; }
+    50% { box-shadow: 0 0 20px #33ff33; }
+    100% { box-shadow: 0 0 5px #33ff33; }
+}
+
+/* Form error */
+.form-error {
+    color: #ff3333;
+    margin: 10px 0;
+    font-size: 0.9em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .user-info {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .user-stats {
+        width: 100%;
+    }
+    
+    .stat-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .stat-label {
+        min-width: auto;
+    }
+    
+    .goals-container,
+    .categories-container {
+        flex-direction: column;
+    }
+    
+    .goal-btn,
+    .category-btn {
+        width: 100%;
+    }
+    
+    .favorite-item {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .remove-fav-btn {
+        width: 100%;
+    }
+}
